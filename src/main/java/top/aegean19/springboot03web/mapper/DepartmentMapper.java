@@ -12,6 +12,5 @@ public interface DepartmentMapper {
 
     List<Department> getAllDpt();
 
-    Department getDptById(int id);
-
+    Department getDptById(Integer id);
 }

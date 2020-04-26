@@ -9,5 +9,5 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
-  type-aliases-package: top.aegean19.springboot05mybatis.pojo
+  type-aliases-package: top.aegean19.springboot03web.pojo
   mapper-locations: classpath:mybatis/mapper/*.xml

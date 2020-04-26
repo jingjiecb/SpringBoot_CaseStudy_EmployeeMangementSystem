@@ -23,7 +23,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void save(Employee employee) {
         if (employee.getId()==null) employee.setId(iniId++);
-        employee.setDepartment(departmentMapper.getDptById(employee.getDepartment().getId()));
         employeeMapper.save(employee);
     }
 

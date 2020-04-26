@@ -14,7 +14,7 @@ public interface EmployeeMapper {
 
     List<Employee> getAll();
 
-    Employee getEmpById(int id);
+    Employee getEmpById(Integer id);
 
-    int delete(int id);
+    int delete(Integer id);
 }

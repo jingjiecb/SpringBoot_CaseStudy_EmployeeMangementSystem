@@ -16,15 +16,15 @@ public class Employee {
     private String email;
     private Integer gender;//0代表女，1代表男
 
-    private Department department;
+    private int departmentId;
     private Date birthday;
 
-    public Employee(Integer id, String lastName, String email, Integer gender, Department department) {
+    public Employee(Integer id, String lastName, String email, Integer gender, int departmentId) {
         this.id = id;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
-        this.department = department;
+        this.departmentId = departmentId;
         //默认日期
         this.birthday = new Date();
     }

@@ -8,36 +8,31 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import top.aegean19.springboot03web.bl.DepartmentService;
-import top.aegean19.springboot03web.dao.DepartmentDao;
-import top.aegean19.springboot03web.dao.EmployeeDao;
+import top.aegean19.springboot03web.bl.EmployeeService;
 import top.aegean19.springboot03web.pojo.Department;
 import top.aegean19.springboot03web.pojo.Employee;
 
-import java.util.Collection;
 import java.util.List;
 
 @Controller
 public class EmployeeController {
 
     @Autowired
-    EmployeeDao employeeDao;
-
-    @Autowired
     DepartmentService departmentService;
 
     @Autowired
-    DepartmentDao departmentDao;
+    EmployeeService employeeService;
 
     @RequestMapping("/emps")
     public String list(Model model){
-        Collection<Employee> employees = employeeDao.getAll();
+        List<Employee> employees = employeeService.getAll();
         model.addAttribute("emps",employees);
         return "emp/list";
     }
 
     @GetMapping("/addEmp")
     public String toAddpage(Model model){
-        Collection<Department> departments=departmentDao.getDepartments();
+        List<Department> departments = departmentService.getDepartments();
         model.addAttribute("dpts",departments);
         return "emp/add";
     }
@@ -45,14 +40,14 @@ public class EmployeeController {
     @PostMapping("/addEmp")
     public String addEmp(Employee employee){
         //System.out.println("addEmployee==> "+employee);
-        employeeDao.add(employee);
+        employeeService.save(employee);
         return "redirect:/emps";
     }
 
     @GetMapping("/update")
     public String toUpdateEmp(@RequestParam("id") Integer eid, Model model){
-        Collection<Department> departments=departmentDao.getDepartments();
-        Employee employee = employeeDao.getEmployeeById(eid);
+        List<Department> departments = departmentService.getDepartments();
+        Employee employee = employeeService.getEmployeeById(eid);
         model.addAttribute("dpts",departments);
         model.addAttribute("employee",employee);
         return "emp/update";
@@ -60,14 +55,13 @@ public class EmployeeController {
 
     @PostMapping("/update")
     public String updateEmp(Employee employee){
-        employeeDao.add(employee);
+        employeeService.save(employee);
         return "redirect:/emps";
     }
 
     @GetMapping("/delete")
     public String deleteEmp(@RequestParam("id") Integer id){
-        employeeDao.delete(id);
+        employeeService.delete(id);
         return "redirect:/emps";
     }
-
 }
