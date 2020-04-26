@@ -16,7 +16,7 @@ public class Employee {
     private String email;
     private Integer gender;//0代表女，1代表男
 
-    private int departmentId;
+    private Integer departmentId;
     private Date birthday;
 
     public Employee(Integer id, String lastName, String email, Integer gender, int departmentId) {

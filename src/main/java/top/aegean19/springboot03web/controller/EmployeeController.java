@@ -25,8 +25,10 @@ public class EmployeeController {
 
     @RequestMapping("/emps")
     public String list(Model model){
+//        System.out.println("info===> 接受到请求");
         List<Employee> employees = employeeService.getAll();
         model.addAttribute("emps",employees);
+        model.addAttribute("dpt",departmentService);
         return "emp/list";
     }
 
@@ -55,7 +57,8 @@ public class EmployeeController {
 
     @PostMapping("/update")
     public String updateEmp(Employee employee){
-        employeeService.save(employee);
+//        System.out.println("updata=====>"+employee.toString());
+        employeeService.update(employee);
         return "redirect:/emps";
     }
 

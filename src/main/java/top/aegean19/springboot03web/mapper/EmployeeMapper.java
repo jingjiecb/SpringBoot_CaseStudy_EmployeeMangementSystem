@@ -12,6 +12,8 @@ public interface EmployeeMapper {
 
     int save(Employee employee);
 
+    int update(Employee employee);
+
     List<Employee> getAll();
 
     Employee getEmpById(Integer id);

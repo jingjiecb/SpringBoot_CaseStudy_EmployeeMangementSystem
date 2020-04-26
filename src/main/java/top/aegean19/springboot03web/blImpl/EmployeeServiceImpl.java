@@ -27,7 +27,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public void update(Employee employee) {
+        employeeMapper.update(employee);
+    }
+
+    @Override
     public List<Employee> getAll() {
+//        System.out.println("info===> 业务逻辑层开始处理请求");
         return employeeMapper.getAll();
     }
 
