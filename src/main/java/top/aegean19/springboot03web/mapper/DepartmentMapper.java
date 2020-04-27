@@ -10,7 +10,9 @@ import java.util.List;
 @Repository
 public interface DepartmentMapper {
 
+    //查找所有部门信息
     List<Department> getAllDpt();
 
+    //根据部门ID查找部门
     Department getDptById(Integer id);
 }

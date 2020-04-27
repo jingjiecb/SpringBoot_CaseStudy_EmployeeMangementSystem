@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//部门表
+/*
+ * 部门简单对象
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

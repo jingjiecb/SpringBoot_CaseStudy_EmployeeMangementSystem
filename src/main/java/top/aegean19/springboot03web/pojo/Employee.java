@@ -6,7 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-//员工表
+/*
+ * 员工简单对象
+ */
 @Data
 @NoArgsConstructor
 public class Employee {

@@ -18,10 +18,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     DepartmentMapper departmentMapper;
 
-    private static Integer iniId=1006;
+    //自动员工ID分配，初始员工编号1001
+    private static Integer iniId=1001;
 
     @Override
     public void save(Employee employee) {
+        while (employeeMapper.getEmpById(iniId)!=null) iniId++;
         if (employee.getId()==null) employee.setId(iniId++);
         employeeMapper.save(employee);
     }

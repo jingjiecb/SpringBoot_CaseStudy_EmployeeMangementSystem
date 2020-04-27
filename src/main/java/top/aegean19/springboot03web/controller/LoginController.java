@@ -23,6 +23,7 @@ public class LoginController {
         }
     }
 
+    //注销，返回登陆页面
     @RequestMapping("/user/logout")
     public String logout(HttpSession session){
         session.invalidate();
