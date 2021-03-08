@@ -2,15 +2,12 @@ pipeline {
   agent any
   triggers {
     GenericTrigger(
-     genericVariables: [
-      [key: 'ref', value: '$.ref']
-     ],
-     causeString: 'Triggered on $ref',
+     causeString: 'Triggered on dev',
      token: 'abc123',
      printContributedVariables: true,
      printPostContent: true,
      silentResponse: false,
-     regexpFilterText: '$ref',
+     regexpFilterText: '^refs/heads/dev$',
      regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
     )
   }
