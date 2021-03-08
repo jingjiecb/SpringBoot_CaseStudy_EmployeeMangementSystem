@@ -2,19 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('pull code') {
+        stage('master build') {
+            when{
+                branch 'master'
+            }
             steps {
-                echo 'pull complete'
+                echo 'master build'
             }
         }
-        stage('build project') {
-            steps {
-                echo 'build project'
+        stage('dev build') {
+            when{
+                branch 'dev'
             }
-        }
-        stage('deploy project') {
             steps {
-                echo 'deploy project'
+                echo 'dev build'
             }
         }
     }
