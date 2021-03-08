@@ -7,7 +7,7 @@ pipeline {
         printContributedVariables: true,
         printPostContent: true,
         regexpFilterExpression: 'refs/heads/' + BRANCH_NAME,
-        regexpFilterText: 'refs/heads/develop',
+        regexpFilterText: 'refs/heads/dev',
         token: 'abc123'
     )
   }
