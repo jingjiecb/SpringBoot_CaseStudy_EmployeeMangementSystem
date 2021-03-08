@@ -14,7 +14,7 @@ pipeline {
   stages {
     stage('Some step') {
       steps {
-        sh "echo $ref"
+        sh "echo master"
       }
     }
   }
