@@ -2,19 +2,19 @@ pipeline {
   agent any
   triggers {
     GenericTrigger(
-     causeString: 'Triggered on dev',
-     token: 'abc123',
-     printContributedVariables: true,
-     printPostContent: true,
-     silentResponse: false,
-     regexpFilterText: '^refs/heads/dev$',
-     regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
+        causeString: 'Triggered by develop',
+        genericVariables: [[key: 'ref', value: '$.ref']],
+        printContributedVariables: true,
+        printPostContent: true,
+        regexpFilterExpression: 'refs/heads/' + BRANCH_NAME,
+        regexpFilterText: 'refs/heads/develop',
+        token: 'abc123'
     )
   }
   stages {
     stage('Some step') {
       steps {
-        sh "echo master"
+        sh "echo dev"
       }
     }
   }
