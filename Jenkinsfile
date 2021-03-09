@@ -46,7 +46,7 @@ pipeline {
                     echo "first run dev"
                 }
             }
-            sh 'nohup java -jar web_test_dev.jar >/dev/null 2>&1 &'
+            sh "nohup 'java -jar web_test_dev.jar >/dev/null 2>&1 &'"
         }
     }
   }
